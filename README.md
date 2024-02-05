@@ -17,7 +17,8 @@
 + flutter_shoppingcart : 8장, 쇼핑카드 앱 만들기
 + flutter_airbnb : 9장 모두의 숙소 만들기
 + flutter_kakao : 10장 모두의 채팅 ui 만들기
-+ flutter_blog : 추가, 모두의 블로그 만들기
++ flutter_blog : 별첨, 모두의 블로그 만들기
++ flutter_homework : 과제
 ###
 #### + my-pjt 시리즈  +
 + my-pjt : 
