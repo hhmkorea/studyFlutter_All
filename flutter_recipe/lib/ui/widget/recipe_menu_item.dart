@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 재사용 가능한 컴포넌트
 class RecipeMenuItem extends StatelessWidget {
   final mText;
   final mIcon;
