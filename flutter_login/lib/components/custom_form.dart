@@ -22,7 +22,10 @@ class CustomForm extends StatelessWidget {
           SizedBox(height: large_gap),
           TextButton(
             onPressed: () {
-              _formKey.currentState!.validate();
+              // 유효성 검사 성공 true 리턴, 아니면 false 리턴
+              if (_formKey.currentState!.validate()) {
+                Navigator.pushNamed(context, "/home");
+              }
             },
             child: Text("Login"),
           ),
