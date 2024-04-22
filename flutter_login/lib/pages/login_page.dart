@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_login/components/Logo.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        // 왼쪽 정렬
         children: [
-          SvgPicture.asset(
-            "assets/logo.svg",
-            height: 80,
-            width: 70,
-          ),
+          Logo("Login"),
         ],
       ),
     );
