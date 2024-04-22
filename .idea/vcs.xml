@@ -2,5 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_airbnb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_blog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_homework" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_kakao" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_profile" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_shoppingcart" vcs="Git" />
   </component>
 </project>
