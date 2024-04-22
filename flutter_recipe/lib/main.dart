@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_recipe/core/theme.dart';
+import 'package:flutter_recipe/ui/widget/recipe_list_item.dart';
 import 'package:flutter_recipe/ui/widget/recipe_menu_item.dart';
 
 void main() {
@@ -39,23 +40,9 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
               ),
-              Column(
-                children: [],
-              ),
-              Column(
-                children: [
-                  Placeholder(fallbackHeight: 80),
-                  Placeholder(fallbackHeight: 30),
-                  Placeholder(fallbackHeight: 50),
-                ],
-              ),
-              Column(
-                children: [
-                  Placeholder(fallbackHeight: 80),
-                  Placeholder(fallbackHeight: 30),
-                  Placeholder(fallbackHeight: 50),
-                ],
-              ),
+              RecipeListItem(mImageName: "coffee", mTitle: "Made Coffee"),
+              RecipeListItem(mImageName: "burger", mTitle: "Made Burger"),
+              RecipeListItem(mImageName: "pizza", mTitle: "Made Pizza"),
             ],
           ),
         ),

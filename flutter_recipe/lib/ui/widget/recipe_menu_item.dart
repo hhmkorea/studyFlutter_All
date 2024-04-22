@@ -9,6 +9,7 @@ class RecipeMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // box decoration
       width: 60,
       height: 80,
       decoration: BoxDecoration(
