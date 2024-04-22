@@ -18,7 +18,7 @@ class RecipeMenuItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(mIcon.food_bank, color: Colors.redAccent),
+          Icon(mIcon, color: Colors.redAccent),
           SizedBox(height: 5),
           Text("$mText", style: TextStyle(color: Colors.black87)),
           // 문자열 변수는 $를 앞에 넣어주는게 좋음.
