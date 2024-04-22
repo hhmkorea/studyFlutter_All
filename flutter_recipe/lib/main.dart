@@ -31,8 +31,7 @@ class MyApp extends StatelessWidget {
                   children: [
                     RecipeMenuItem(mIcon: Icons.food_bank, mText: "ALL"),
                     SizedBox(width: 25),
-                    RecipeMenuItem(
-                        mIcon: Icons.emoji_food_beverage, mText: "coffee"),
+                    RecipeMenuItem(mIcon: Icons.emoji_food_beverage, mText: "coffee"),
                     SizedBox(width: 25),
                     RecipeMenuItem(mIcon: Icons.fastfood, mText: "Buger"),
                     SizedBox(width: 25),
@@ -41,11 +40,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               Column(
-                children: [
-                  Placeholder(fallbackHeight: 80),
-                  Placeholder(fallbackHeight: 30),
-                  Placeholder(fallbackHeight: 50),
-                ],
+                children: [],
               ),
               Column(
                 children: [
