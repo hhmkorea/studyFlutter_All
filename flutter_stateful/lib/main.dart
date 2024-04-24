@@ -76,7 +76,7 @@ class Header extends StatelessWidget {
 }
 
 class Bottom extends StatelessWidget {
-  Function increase;
+  final increase;
 
   Bottom(this.increase, {super.key});
 
@@ -84,9 +84,7 @@ class Bottom extends StatelessWidget {
   Widget build(BuildContext context) {
     print("Bottom Rendering...");
     return ElevatedButton(
-      onPressed: () {
-        increase();
-      },
+      onPressed: increase,
       child: Align(
         child: Text(
           "증가",
