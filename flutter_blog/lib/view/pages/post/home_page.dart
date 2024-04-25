@@ -46,7 +46,8 @@ class HomePage extends StatelessWidget {
            앱바에 로그인되면 true 출력함.
            Obx() : 컨트롤러 상태가 변경이 되면 자동으로 업데이트 됨.
         */
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.lightBlue,
+        foregroundColor: Colors.white,
       ),
       body: Obx(
         () => RefreshIndicator(

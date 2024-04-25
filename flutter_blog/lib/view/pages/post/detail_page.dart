@@ -24,19 +24,27 @@ class DetailPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Obx(()=> Column(
+        child: Obx(
+          () => Column(
             crossAxisAlignment: CrossAxisAlignment.start, // 왼쪽 배치
             children: [
               Text(
-                  "${p.post.value.title}",
-                  style: TextStyle( fontWeight: FontWeight.bold, fontSize: 35
-                  ),
+                "${p.post.value.title}",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 35,
+                ),
               ),
               Divider(),
               u.user.value.id == p.post.value.user!.id
-                  ? Row( // 삭제, 수정 버튼 가로 영역으로 보여줌
+                  ? Row(
+                      // 삭제, 수정 버튼 가로 영역으로 보여줌
                       children: [
                         ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.lightBlue,
+                            foregroundColor: Colors.white,
+                          ),
                           onPressed: () async {
                             await p.deleteById(p.post.value.id!);
                             Get.off(() => HomePage()); // HomePage() : 리스트로 갱신되어 이동됨, 상태관리로 갱신시킬 수 있음.
@@ -46,6 +54,10 @@ class DetailPage extends StatelessWidget {
                         ),
                         SizedBox(width: 10),
                         ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.lightBlue,
+                            foregroundColor: Colors.white,
+                          ),
                           onPressed: () {
                             Get.to(() => UpdatePage()); // UpdatePage() : 수정 화면으로 이동
                           },
@@ -54,8 +66,10 @@ class DetailPage extends StatelessWidget {
                       ],
                     )
                   : SizedBox(),
-              Expanded( // Expanded : 글제목 제외한 나머지 부분 영역을 차지함.
-                child: SingleChildScrollView( // 높이가 없으므로 Expanded 붙여야 함.
+              Expanded(
+                // Expanded : 글제목 제외한 나머지 부분 영역을 차지함.
+                child: SingleChildScrollView(
+                  // 높이가 없으므로 Expanded 붙여야 함.
                   child: Text("${p.post.value.content}"), // 글 내용 보여줌.
                 ),
               ),
