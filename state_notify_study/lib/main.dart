@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: TodoListView(),
       ),
@@ -32,12 +33,36 @@ class TodoListView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // rebuild the widget when the todo list changes
-    List<Todo> todos = ref.watch(todosProvider);
+    List<Todo> todos = ref.watch(todosProvider); // watch : 창고관리자(todosProvider)를 지켜보고 있음. 데이타가 없으면 빈 값만 보여줌.
 
     // Let's render the todos in a scrollable list view
     return ListView(
       children: [
-        for (final todo in todos)
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blueAccent,
+            foregroundColor: Colors.white,
+          ),
+          onPressed: () {
+            Todo todo = Todo(id: "4", description: "설명4", completed: false);
+            ref.read(todosProvider.notifier).addTodo(todo);
+            // 기존 state 변경 방식 : 깊은 복사로 원래 데이타까지 전체 변경 해야함, 재사용 안됨.
+            //List<Todo> todos = ref.read(todosProvider.notifier).state;
+            //ref.read(todosProvider.notifier).state = [...todos, todo];
+          },
+          child: Text("추가"),
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blueAccent,
+            foregroundColor: Colors.white,
+          ),
+          onPressed: () {
+            ref.read(todosProvider.notifier).removeTodo("1"); // removeTodo 메서드 활용
+          },
+          child: Text("삭제"),
+        ),
+        for (final todo in todos) // 데이타가 없으면 빈값이 보임.
           CheckboxListTile(
             value: todo.completed,
             // When tapping on the todo, change its completed status
