@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// 서버쪽에서 통신으로 받는 데이터
 Stream<String> say() async* {
   for (var i = 0; i < 2; i++) {
     await Future.delayed(Duration(seconds: 2));
@@ -10,8 +11,10 @@ Stream<String> say() async* {
   }
 }
 
+final streamController = StreamController<String>();
 final helloStreamProvider = StreamProvider.autoDispose<String>((ref) {
-  return say();
+  streamController.addStream(say());
+  return streamController.stream;
 });
 
 void main() {
@@ -42,7 +45,11 @@ class MyApp extends ConsumerWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.blueAccent,
+          onPressed: () {
+            streamController.add("end");
+          },
           child: Text("add"),
         ),
       ),
