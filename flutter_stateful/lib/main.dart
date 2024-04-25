@@ -84,6 +84,11 @@ class Bottom extends StatelessWidget {
   Widget build(BuildContext context) {
     print("Bottom Rendering...");
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+      ),
       onPressed: increase,
       child: Align(
         child: Text(
