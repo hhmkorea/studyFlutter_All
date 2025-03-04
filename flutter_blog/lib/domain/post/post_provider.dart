@@ -1,7 +1,7 @@
 import 'package:flutter_blog/util/jwt.dart';
 import 'package:get/get.dart';
 
-const host = "http://192.168.100.144:8080";
+const host = "http://192.168.100.37:8080";
 
 // 1. 통신
 class PostProvider extends GetConnect {

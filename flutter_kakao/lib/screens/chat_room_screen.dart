@@ -119,7 +119,7 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
           backgroundColor: Colors.transparent,
           title: Text(
             "홍길동",
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           actions: [
             Icon(FontAwesomeIcons.search, size: 20),
