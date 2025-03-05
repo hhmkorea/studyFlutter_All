@@ -47,9 +47,9 @@ class UserRepository {
 
   Future<User> save(String username, String password, String email) async {
     JoinReqDto joinReqDto = JoinReqDto(username, password, email);
-    print("username ---------------------------" + joinReqDto.username.toString());
-    print("password---------------------------" + joinReqDto.password.toString());
-    print("email---------------------------" + joinReqDto.email.toString());
+    // print("username ---------------------------" + joinReqDto.username.toString());
+    // print("password---------------------------" + joinReqDto.password.toString());
+    // print("email---------------------------" + joinReqDto.email.toString());
     Response response = await _userProvider.save(joinReqDto.toJson());
 
     dynamic body = response.body;
