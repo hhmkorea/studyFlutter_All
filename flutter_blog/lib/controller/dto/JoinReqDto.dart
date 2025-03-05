@@ -9,6 +9,6 @@ class JoinReqDto {
   Map<String, dynamic> toJson() => {
     "username":username,
     "password":password,
-    "email:":email,
+    "email":email,
   };
 }
